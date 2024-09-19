@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Department of Home Affairs - Logon</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <!-- First Navbar -->
+  <div class="top-navbar">
+    <div class="container">
+        <ul class="top-nav">
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Media Centre</a></li>
+            <li><a href="#">Government Services</a></li>
+            <li><a href="#">Publications</a></li>
+            <li><a href="#">Tenders</a></li>
+            <li><a href="#">Jobs</a></li>
+            <div class="social-icons">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="mailto:info@dha.gov.za" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+        </ul>
+    </div>
+  </div>
+
+  <header class="main-header">
+    <div class="container">
+        <div class="logo">
+            <img src="img/logoo.jpeg" alt="DHA Logo">
+            <h1>S.A Department of Home Affairs</h1>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="INDEX.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="reg.html"><i class="fas fa-user-plus"></i> Account Registration</a></li>
+                <li><a href="#"><i class="fas fa-sign-in-alt"></i> Logon to Apply & Track</a></li>
+                <li><a href="bot.html"><i class="fas fa-comments"></i> Get Help</a></li>
+            </ul>
+        </nav>
+    </div>
+  </header>
+
+  <section class="login-info-banner">
+    <div class="container">
+        <h2>Logon</h2>
+        <p>Please enter your username (ID Number) and password.</p>
+        <p>Register if you do not have an account.</p>
+        <p>A one-time-pin (OTP) will be sent to your cellphone, so please ensure you have your cellphone near you.</p>
+    </div>
+</section>
+
+  <section class="login-section">
+    <div class="container">
+      
+        <form action="/submit-login" method="post" class="login-form">
+            <div class="form-group">
+                <label for="id-number"><i class="fas fa-id-card"></i> ID Number</label>
+                <input type="text" id="id-number" name="id_number" required placeholder="Enter your ID Number">
+            </div>
+            <div class="form-group">
+                <label for="password"><i class="fas fa-lock"></i> Password</label>
+                <input type="password" id="password" name="password" required placeholder="Enter your Password">
+            </div>
+
+            <!-- CAPTCHA Section -->
+            <div class="form-group">
+                <label><i class="fas fa-shield-alt"></i> Retype the CAPTCHA code from the image</label>
+                <img src="img/cap.jpeg" alt="CAPTCHA Image" id="captcha-image" class="captcha-img">
+                <button type="button" id="refresh-captcha" class="captcha-refresh"><i class="fas fa-sync-alt"></i> Change the CAPTCHA code</button>
+                <input type="text" id="captcha" name="captcha" required placeholder="Type in the above characters">
+                <small>*Please note that the CAPTCHA is NOT case sensitive.</small>
+            </div>
+
+            <div class="form-group">
+                <a href="apply.html" class="btn"><i class="fas fa-sign-in-alt"></i> Logon</a>
+            </div>
+            
+        </form>
+
+        <div class="password-reset">
+            <a href="#">Forgot Password/Password Reset?</a>
+        </div>
+    </div>
+  </section>
+
+  <footer class="main-footer">
+    <div class="container">
+        <p>&copy; 2024 Department of Home Affairs. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
+
+<style>
+  /* Login Info Banner */
+.login-info-banner {
+    background: #7c848c; /* Dark blue background for the banner */
+    color: #fff; /* White text */
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.login-info-banner .container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.login-info-banner h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.login-info-banner p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+/* Login Form Section */
+.login-form-section {
+    background: #f4f4f4;
+    padding: 40px 0;
+}
+
+.login-form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.btn {
+    display: inline-block; /* Ensure the link behaves like a block-level button */
+    background-color: #003366;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none; /* Remove underline from the link */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #ffb81c;
+}
+
+
+.password-reset {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.password-reset a {
+    color: #003366;
+    text-decoration: none;
+}
+
+.password-reset a:hover {
+    text-decoration: underline;
+}
+
+/* CAPTCHA Styles */
+.captcha-img {
+    display: block;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    padding: 5px;
+    width: 200px; /* Adjust size as needed */
+}
+
+.captcha-refresh {
+    background-color: #ffb81c;
+    color: #003366;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.captcha-refresh:hover {
+    background-color: #003366;
+    color: #ffb81c;
+}
+
+small {
+    display: block;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* Form Styling */
+.login-form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.btn {
+    background-color: #003366;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #ffb81c;
+}
+
+.password-reset {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.password-reset a {
+    color: #003366;
+    text-decoration: none;
+}
+
+.password-reset a:hover {
+    text-decoration: underline;
+}
+
+/* CAPTCHA Styles */
+.captcha-img {
+    display: block;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    padding: 5px;
+    width: 200px; /* Adjust size as needed */
+}
+
+.captcha-refresh {
+    background-color: #ffb81c;
+    color: #003366;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.captcha-refresh:hover {
+    background-color: #003366;
+    color: #ffb81c;
+}
+
+small {
+    display: block;
+    color: #666;
+    margin-top: 5px;
+}
+
+    /* Login Section */
+.login-section {
+    background: #f4f4f4;
+    padding: 40px 0;
+}
+
+.login-form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-group input[type="checkbox"] {
+    display: inline-block;
+    width: auto;
+    margin-right: 5px;
+}
+
+.btn {
+    background-color: #003366;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #ffb81c;
+}
+
+.password-reset {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.password-reset a {
+    color: #003366;
+    text-decoration: none;
+}
+
+.password-reset a:hover {
+    text-decoration: underline;
+}
+
+/* CAPTCHA Styles */
+.captcha-img {
+    display: block;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    padding: 5px;
+    width: 200px; /* Adjust size as needed */
+}
+
+.captcha-refresh {
+    background-color: #ffb81c;
+    color: #003366;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.captcha-refresh:hover {
+    background-color: #003366;
+    color: #ffb81c;
+}
+
+small {
+    display: block;
+    color: #666;
+    margin-top: 5px;
+}
+
+ul {
+            list-style-type: none; /* Remove default bullets */
+            padding: 0;
+        }
+
+        ul li {
+            position: relative;
+            padding-left: 20px; /* Space for the custom bullet */
+        }
+
+        ul li::before {
+            content: '•'; /* Custom bullet character */
+            position: absolute;
+            left: 0;
+            color: green; /* Bullet color */
+            font-size: 20px; /* Bullet size */
+            line-height: 1; /* Adjust if needed */
+        }
+
+    /* Banner (Left Sidebar) */
+.left-banner {
+    width: 250px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    position: fixed;
+    top: 250px;
+    left: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.left-banner h3 {
+    color: #003366;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.left-banner ul {
+    list-style: none;
+    padding: 0;
+}
+
+.left-banner ul li {
+    margin-bottom: 10px;
+}
+
+.left-banner p {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.left-banner strong {
+    color: #ffb81c;
+}
+
+/* Adjust the registration section margin to avoid overlap */
+.registration-section {
+    margin-left: 300px; /* Adjust based on banner width */
+}
+
+.captcha-img {
+    display: block;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    padding: 5px;
+    width: 200px; /* Adjust size as needed */
+}
+
+.captcha-refresh {
+    background-color: #ffb81c;
+    color: #003366;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.captcha-refresh:hover {
+    background-color: #003366;
+    color: #ffb81c;
+}
+
+small {
+    display: block;
+    color: #666;
+    margin-top: 5px;
+}
+
+    /* Registration Section */
+.registration-section {
+    background: #f4f4f4;
+    padding: 40px 0;
+}
+
+.registration-form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-group input[type="checkbox"] {
+    display: inline-block;
+    width: auto;
+    margin-right: 5px;
+}
+
+.btn {
+    background-color: #003366;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #ffb81c;
+}
+
+.registration-section h2 {
+    text-align: center;
+    color: #003366;
+    margin-bottom: 20px;
+}
+
+    
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* First Navbar (Top) */
+.top-navbar {
+    background: #ffb81c;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-nav {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+}
+
+.top-nav li a {
+    color: #333;
+    text-decoration: none;
+}
+
+.social-icons {
+    display: flex;
+    align-items: center;
+}
+
+.social-icons a {
+    color: #333;
+    font-size: 18px;
+    margin-left: 15px;
+    text-decoration: none;
+}
+
+/* Main Header */
+.main-header {
+    background: #003366; /* South African Blue */
+    color: #fff;
+    padding: 20px 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo img {
+    max-height: 50px;
+}
+
+/* Main Navigation Styling */
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+    position: relative;
+    z-index: 100;
+    background-color: #003366; /* Deep blue background */
+}
+
+.main-nav ul li {
+    display: inline-block;
+    position: relative;
+    z-index: 101;
+}
+
+.main-nav ul li a {
+    color: #fff; /* White text */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font */
+    text-decoration: none;
+    font-size: 16px;
+    padding: 15px 20px;
+    display: block;
+    font-weight: 600; /* Semi-bold text */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effect */
+    border-radius: 4px; /* Rounded corners */
+}
+
+.main-nav ul li a:hover {
+    background-color: #ffb81c; /* South African gold on hover */
+    color: #003366; /* Blue text on hover */
+}
+
+/* Footer */
+.main-footer {
+    background: #003366;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.main-footer p {
+    margin: 0;
+}
+
+
+
+</style>

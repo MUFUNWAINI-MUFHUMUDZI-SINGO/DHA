@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Department of Home Affairs - Contact Us</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        /* Navbar */
+        .top-navbar {
+            background: #ffb81c;
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-nav {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 20px;
+        }
+
+        .top-nav li a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .social-icons {
+            display: flex;
+            align-items: center;
+        }
+
+        .social-icons a {
+            color: #333;
+            font-size: 18px;
+            margin-left: 15px;
+            text-decoration: none;
+        }
+
+        /* Main Header */
+        .main-header {
+            background: #003366; /* South African Blue */
+            color: #fff;
+            padding: 20px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo img {
+            max-height: 50px;
+        }
+
+        /* Main Navigation Styling */
+        .main-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+            position: relative;
+            z-index: 100;
+            background-color: #003366; /* Deep blue background */
+        }
+
+        .main-nav ul li {
+            display: inline-block;
+            position: relative;
+            z-index: 101;
+        }
+
+        .main-nav ul li a {
+            color: #fff; /* White text */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font */
+            text-decoration: none;
+            font-size: 16px;
+            padding: 15px 20px;
+            display: block;
+            font-weight: 600; /* Semi-bold text */
+            transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effect */
+            border-radius: 4px; /* Rounded corners */
+        }
+
+        .main-nav ul li a:hover {
+            background-color: #ffb81c; /* South African gold on hover */
+            color: #003366; /* Blue text on hover */
+        }
+
+        /* Contact Us Section */
+        .contact-section {
+            background: #f4f4f4;
+            padding: 40px 0;
+        }
+
+        .contact-section h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 28px;
+            color: #003366;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+        }
+
+        .contact-info div {
+            flex: 1;
+            min-width: 300px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .contact-info h3 {
+            margin-top: 0;
+            font-size: 22px;
+            color: #003366;
+        }
+
+        .contact-info p {
+            margin: 5px 0;
+            text-align: center;
+        }
+
+        .contact-info a {
+            color: #003366;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        .main-footer {
+            background: #003366;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .main-footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- First Navbar -->
+    <div class="top-navbar">
+        <div class="container">
+            <ul class="top-nav">
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Media Centre</a></li>
+                <li><a href="#">Government Services</a></li>
+                <li><a href="#">Publications</a></li>
+                <li><a href="#">Tenders</a></li>
+                <li><a href="#">Jobs</a></li>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="mailto:info@dha.gov.za" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </ul>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <img src="img/logoo.jpeg" alt="DHA Logo">
+                <h1>S.A Department of Home Affairs</h1>
+            </div>
+
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="INDEX.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="Tariff.html"><i class="fas fa-file-invoice-dollar"></i> Tariffs</a></li>
+                    <li><a href="contact.html"><i class="fas fa-address-book"></i> Contacts</a></li>
+                    <li><a href="bot.html"><i class="fas fa-comments"></i> Get Help</a></li>
+                </ul>
+            </nav>
+            
+        </div>
+    </header>
+
+    <!-- Contact Us Section -->
+    <section class="contact-section">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-info">
+                <!-- Service Queries -->
+                <div>
+                    <h3>Service Queries</h3>
+                    <p>Contact Count: 0</p>
+                    <p>Gqeberha (Port Elizabeth) Refugee Reception Centre</p>
+                    <p>Centre Manager: Sabelo Ngxitho</p>
+                    <p>Email: <a href="mailto:sabelo.ngxitho@dha.gov.za">sabelo.ngxitho@dha.gov.za</a></p>
+                    <p>Address: Gqeberha, Eastern Cape, South Africa</p>
+                    <p>Phone: <a href="tel:+27414045510">041 404 5510</a></p>
+                    <p>Mobile: <a href="tel:+27664872131">066 487 2131</a></p>
+                </div>
+
+                <!-- Ministerial Offices -->
+                <div>
+                    <h3>Ministerial Offices</h3>
+                    <p>Contact Count: 7</p>
+                    <p>Details for Ministerial Offices will be provided upon request.</p>
+                </div>
+
+                <!-- DHA Head Quarters -->
+                <div>
+                    <h3>DHA Head Quarters</h3>
+                    <p>Contact Count: 2</p>
+                    <p>Head Office Address: 123 Main Street, Cityville, 12345</p>
+                    <p>Phone: <a href="tel:+27123456789">+27 12 345 6789</a></p>
+                    <p>Email: <a href="mailto:info@dha.gov.za">info@dha.gov.za</a></p>
+                </div>
+
+                <!-- DHA Leadership -->
+                <div>
+                    <h3>DHA Leadership</h3>
+                    <p>Contact Count: 9</p>
+                    <p>Details for DHA Leadership will be provided upon request.</p>
+                </div>
+
+                <!-- Provincial Managers -->
+                <div>
+                    <h3>Provincial Managers</h3>
+                    <p>Contact Count: 18</p>
+                    <p>Details for Provincial Managers will be provided upon request.</p>
+                </div>
+
+                <!-- Banks -->
+                <div>
+                    <h3>Banks</h3>
+                    <p>Contact Count: Click on the Province name to view the offices</p>
+                    <p>Details for Bank branches will be provided based on the province.</p>
+                </div>
+
+                <!-- South African Airports -->
+                <div>
+                    <h3>South African Airports</h3>
+                    <p>Contact Count: 10</p>
+                    <p>Details for South African Airports will be provided upon request.</p>
+                </div>
+
+                <!-- South African Harbours -->
+                <div>
+                    <h3>South African Harbours</h3>
+                    <p>Contact Count: 8</p>
+                    <p>Details for South African Harbours will be provided upon request.</p>
+                </div>
+
+                <!-- South African Land Ports -->
+                <div>
+                    <h3>South African Land Ports</h3>
+                    <p>Contact Count: 0</p>
+                    <p>No specific contact details available for this category.</p>
+                </div>
+
+                <!-- Refugee Centres -->
+                <div>
+                    <h3>Refugee Centres</h3>
+                    <p>Contact Count: 5</p>
+                    <p>Gqeberha (Port Elizabeth) Refugee Reception Centre</p>
+                    <p>Centre Manager: Sabelo Ngxitho</p>
+                    <p>Email: <a href="mailto:sabelo.ngxitho@dha.gov.za">sabelo.ngxitho@dha.gov.za</a></p>
+                    <p>Address: Gqeberha, Eastern Cape, South Africa</p>
+                    <p>Phone: <a href="tel:+27414045510">041 404 5510</a></p>
+                    <p>Mobile: <a href="tel:+27664872131">066 487 2131</a></p>
+                </div>
+
+                <!-- Deportations -->
+                <div>
+                    <h3>Deportations</h3>
+                    <p>Contact Count: 1</p>
+                    <p>Details for Deportations will be provided upon request.</p>
+                </div>
+
+                <!-- Lindela Holding Facilities -->
+                <div>
+                    <h3>Lindela Holding Facilities</h3>
+                    <p>Contact Count: 1</p>
+                    <p>Details for Lindela Holding Facilities will be provided upon request.</p>
+                </div>
+
+                <!-- Counter Corruption & Security -->
+                <div>
+                    <h3>Counter Corruption & Security</h3>
+                    <p>Contact Count: Information not available</p>
+                    <p>No specific contact details available for this category.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2024 Department of Home Affairs. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

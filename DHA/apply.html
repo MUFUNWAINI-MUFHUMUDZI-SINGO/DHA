@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Department of Home Affairs - Application and Tracking</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        
+        /* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+/* First Navbar (Top) */
+.top-navbar {
+    background: #ffb81c;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-nav {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+}
+
+.top-nav li a {
+    color: #333;
+    text-decoration: none;
+}
+
+.social-icons {
+    display: flex;
+    align-items: center;
+}
+
+.social-icons a {
+    color: #333;
+    font-size: 18px;
+    margin-left: 15px;
+    text-decoration: none;
+}
+
+/* Main Header */
+.main-header {
+    background: #003366; /* South African Blue */
+    color: #fff;
+    padding: 20px 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo img {
+    max-height: 50px;
+}
+
+/* Main Navigation Styling */
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+    position: relative;
+    z-index: 100;
+    background-color: #003366; /* Deep blue background */
+}
+
+.main-nav ul li {
+    display: inline-block;
+    position: relative;
+    z-index: 101;
+}
+
+.main-nav ul li a {
+    color: #fff; /* White text */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font */
+    text-decoration: none;
+    font-size: 16px;
+    padding: 15px 20px;
+    display: block;
+    font-weight: 600; /* Semi-bold text */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effect */
+    border-radius: 4px; /* Rounded corners */
+}
+
+.main-nav ul li a:hover {
+    background-color: #ffb81c; /* South African gold on hover */
+    color: #003366; /* Blue text on hover */
+}
+
+/* Footer */
+.main-footer {
+    background: #003366;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.main-footer p {
+    margin: 0;
+}
+
+
+        /* Application Form Section */
+        .application-section {
+            background: #f4f4f4;
+            padding: 40px 0;
+        }
+
+        .application-form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Application Section */
+.application-section {
+    padding: 20px;
+    background: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.application-section h2 {
+    color: #003366;
+    margin-bottom: 20px;
+}
+
+.application-form .form-group {
+    margin-bottom: 15px;
+}
+
+.application-form label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.application-form label i {
+    margin-right: 10px;
+}
+
+.application-form input[type="text"], 
+.application-form input[type="file"], 
+.application-form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.application-form .btn {
+    background-color: #003366;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.application-form .btn i {
+    margin-right: 8px;
+}
+
+.application-form .btn:hover {
+    background-color: #ffb81c;
+}
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .form-group input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .form-group .radio-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .form-group .radio-group label {
+            margin-bottom: 0;
+        }
+
+        /* Timeline Section */
+        .timeline-section {
+            padding: 40px 0;
+            background: #e9ecef;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 10px 0;
+            list-style: none;
+            border-left: 2px solid #003366;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -7px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: #003366;
+            border: 2px solid #fff;
+            top: 0;
+            z-index: 1;
+        }
+
+        .timeline-item-content {
+            padding: 20px;
+            background: #3fc150;
+            border-radius: 6px;
+            position: relative;
+            margin-left: 40px;
+        }
+
+        .timeline-item-content h3 {
+            margin-top: 0;
+        }
+
+        .timeline-item-content p {
+            margin-bottom: 0;
+        }
+
+        .timeline-item:nth-child(even) .timeline-item-content {
+            margin-left: 0;
+            margin-right: 40px;
+        }
+
+        .timeline-item:nth-child(even)::before {
+            left: auto;
+            right: -7px;
+        }
+    </style>
+</head>
+<body>
+  <!-- First Navbar -->
+  <div class="top-navbar">
+    <div class="container">
+        <ul class="top-nav">
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Media Centre</a></li>
+            <li><a href="#">Government Services</a></li>
+            <li><a href="#">Publications</a></li>
+            <li><a href="#">Tenders</a></li>
+            <li><a href="#">Jobs</a></li>
+            <div class="social-icons">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="mailto:info@dha.gov.za" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+        </ul>
+    </div>
+  </div>
+
+  <header class="main-header">
+    <div class="container">
+        <div class="logo">
+            <img src="img/logoo.jpeg" alt="DHA Logo">
+            <h1>S.A Department of Home Affairs</h1>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="INDEX.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#tracking"><i class="fas fa-search"></i> Track application</a></li>
+               
+                <li><a href="log.html"><i class="fas fa-sign-in-alt"></i> Log out</a></li>
+                <li><a href="bot.html"><i class="fas fa-comments"></i> Get Help</a></li>
+            </ul>
+        </nav>
+    </div>
+  </header>
+
+<!-- Application Form Section -->
+<section class="application-section">
+    <div class="container">
+      <center>
+        <h2>Apply for Services</h2>
+      </center>
+      <form action="/submit-application" method="post" class="application-form" enctype="multipart/form-data">
+        
+        <div class="form-group">
+          <label for="province"><i class="fas fa-map-marker-alt"></i> Current Province</label>
+          <select id="province" name="province" required>
+            <option value="" disabled selected>Select your Province</option>
+            <option value="Limpopo">Limpopo</option>
+            <option value="Gauteng">Gauteng</option>
+            <option value="Western Cape">Western Cape</option>
+            <option value="KwaZulu-Natal">KwaZulu-Natal</option>
+            <option value="Eastern Cape">Eastern Cape</option>
+            <!-- Add other provinces here -->
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="nearest-home-affairs"><i class="fas fa-building"></i> Nearest Home Affairs</label>
+          <select id="nearest-home-affairs" name="nearest_home_affairs" required>
+            <option value="" disabled selected>Select your nearest Home Affairs</option>
+            <option value="Makwarela">Makwarela</option>
+            <option value="Vuwani">Vuwani</option>
+            <option value="Niani">Niani</option>
+            <option value="Rasila">Rasila</option>
+            <option value="Tshikota Village">Tshikota Village</option>
+            <!-- Add other branches here -->
+          </select>
+        </div>
+        
+        <!-- Additional Fields for Application -->
+        <div class="form-group">
+          <label for="photo"><i class="fas fa-camera"></i> Photograph</label>
+          <input type="file" id="photo" name="photo" accept="image/*" required>
+        </div>
+        <div class="form-group">
+          <label for="biometric-appointment"><i class="fas fa-calendar-alt"></i> Biometric Data Appointment</label>
+          <input type="text" id="biometric-appointment" name="biometric_appointment" placeholder="Schedule if required">
+        </div>
+        <div class="form-group">
+          <label for="parental-info"><i class="fas fa-user-friends"></i> Parental Information (if applicable)</label>
+          <input type="text" id="parental-info" name="parental_info" placeholder="Parent/guardian's ID">
+        </div>
+    
+        <!-- Replacement of Existing ID Card Fields -->
+        <div class="form-group">
+          <h3><i class="fas fa-id-card-alt"></i> For Replacement of Existing ID Card</h3>
+          <label for="replacement-reason"><i class="fas fa-exclamation-circle"></i> Reason for Replacement</label>
+          <input type="text" id="replacement-reason" name="replacement_reason" placeholder="Specify reason (e.g., lost, stolen)">
+        </div>
+        <div class="form-group">
+          <label for="previous-id-number"><i class="fas fa-id-card"></i> Current/Previous ID Card Details</label>
+          <input type="text" id="previous-id-number" name="previous_id_number" placeholder="Confirm previous ID number">
+        </div>
+        <div class="form-group">
+          <label for="proof-identity"><i class="fas fa-file-alt"></i> Proof of Identity</label>
+          <input type="file" id="proof-identity" name="proof_identity" accept="image/*">
+        </div>
+        <div class="form-group">
+          <label for="proof-residence"><i class="fas fa-home"></i> Proof of Residence</label>
+          <input type="file" id="proof-residence" name="proof_residence" accept="image/*">
+        </div>
+        <div class="form-group">
+          <label for="police-report"><i class="fas fa-file"></i> Police Report (if applicable)</label>
+          <input type="file" id="police-report" name="police_report" accept="image/*">
+        </div>
+        
+        <!-- General Steps for Both Scenarios -->
+        <div class="form-group">
+          <h3><i class="fas fa-info-circle"></i> General Steps for Both Scenarios</h3>
+          <p>Login to your account on the online portal.</p>
+          <p>Navigate to the Application Section for ID card application or replacement.</p>
+          <p>Fill in all required and additional information as needed.</p>
+          <p>Upload necessary documents or photographs.</p>
+          <p>Review and submit your application.</p>
+          <p>Schedule a biometric appointment if required.</p>
+        </div>
+    
+        <div class="form-group">
+          <button type="submit" class="btn"><i class="fas fa-paper-plane"></i> Submit Application</button>
+        </div>
+      </form>
+    </div>
+  </section>
+  
+    
+
+  <!-- Tracking Section -->
+     <section id="tracking" class="timeline-section">
+  <section class="timeline-section">
+    
+    <div class="container">
+        <center>
+        <h2>Application Tracking</h2>
+    </center>
+        <ul class="timeline">
+            <li class="timeline-item">
+                <div class="timeline-item-content">
+                    <h3>Application Received</h3>
+                    <p>Your application has been received and is being processed.</p>
+                </div>
+            </li>
+            <li class="timeline-item">
+                <div class="timeline-item-content">
+                    <h3>Under Review</h3>
+                    <p>Your application is currently under review by our team.</p>
+                </div>
+            </li>
+            <li class="timeline-item">
+                <div class="timeline-item-content">
+                    <h3>Biometrics Appointment</h3>
+                    <p>You've been scheduled for a biometrics appointment.</p>
+                </div>
+            </li>
+            <li class="timeline-item">
+                <div class="timeline-item-content">
+                    <h3>Decision Made</h3>
+                    <p>A decision has been made on your application. You will be notified soon.</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+  </section>
+
+
+</body>
+</html>

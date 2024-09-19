@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Department of Home Affairs - Account Registration</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <!-- First Navbar -->
+  <div class="top-navbar">
+    <div class="container">
+        <ul class="top-nav">
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Media Centre</a></li>
+            <li><a href="#">Government Services</a></li>
+            <li><a href="#">Publications</a></li>
+            <li><a href="#">Tenders</a></li>
+            <li><a href="#">Jobs</a></li>
+       
+        <div class="social-icons">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="mailto:info@dha.gov.za" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+    </ul>
+    </div>
+  </div>
+
+  <header class="main-header">
+    <div class="container">
+        <div class="logo">
+            <img src="img/logoo.jpeg" alt="DHA Logo">
+            <h1>S.A Department of Home Affairs</h1>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="INDEX.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="reg.html"><i class="fas fa-user-plus"></i> Account registration</a></li>
+                <li><a href="log.html"><i class="fas fa-sign-in-alt"></i> Logon to apply & Track</a></li>
+                
+            </ul>
+        </nav>
+    </div>
+  </header>
+
+  <!-- Chatbot Container -->
+  <div id="chatbot">
+    <div id="chatbox">
+        <div id="messages"></div>
+    </div>
+    <input type="text" id="user-input" placeholder="Type a number to choose a category..." />
+    <button id="send-button">Send</button>
+  </div>
+  <script>
+ document.addEventListener('DOMContentLoaded', function () {
+    const messages = document.getElementById('messages');
+    const userInput = document.getElementById('user-input');
+    const sendButton = document.getElementById('send-button');
+
+        // Responses including sub-options
+    const responses = {
+        '1': 'You selected E-Services. Here is some information about E-Services...<br><br>Sub-options:<br>1.1. Create account<br>1.2. Track application',
+        
+        '1.1': 'To create an account, visit the Smart ID card option on the website and click "Register". Follow the instructions provided to complete your account creation.',
+
+        '1.2': 'To track your application, first log in with your ID and password, then navigate to the "Track Application" section to check the status of your application.',
+
+        '2': 'You selected About. Here is some information about About...<br><br>Sub-options:<br>2.1. Department Overview<br>2.2. Mission and Vision',
+        
+        '2.1': 'The Department of Home Affairs provides a range of services to South African citizens and residents. For more details about the department’s services and responsibilities, visit the "About Us" section on the website.',
+
+        '2.2': 'The Department’s mission is to provide services that improve the quality of life for South African citizens. For detailed information about our vision and goals, refer to the "Mission and Vision" page.',
+
+        '3': 'You selected Civic Services. Here is some information about Civic Services...<br><br>Sub-options:<br>3.1. Birth Certificates<br>3.2. Marriage Certificates<br>3.3. Death Certificates',
+        
+        '3.1': 'To apply for a Birth Certificate, visit the Birth Certificates page and follow the instructions for submission. Ensure you have all required documents ready.',
+
+        '3.2': 'For Marriage Certificates, you need to provide details of the marriage and relevant documents. Check the Marriage Certificates section for application procedures.',
+
+        '3.3': 'Death Certificates can be applied for by presenting the necessary documents and details at the Death Certificates section on the website.',
+
+        '4': 'You selected Immigration. Here is some information about Immigration...<br><br>Sub-options:<br>4.1. Visa Applications<br>4.2. Permanent Residency<br>4.3. Citizenship',
+        
+        '4.1': 'Visa Applications can be submitted through the Immigration section. Select the type of visa you need and follow the guidelines for application.',
+
+        '4.2': 'To apply for Permanent Residency, visit the Permanent Residency page and check the requirements and application process for long-term residency in South Africa.',
+
+        '4.3': 'For information on Citizenship, including naturalization processes, visit the Citizenship section for detailed guidelines and requirements.',
+
+        '5': 'You selected Statements. Here is some information about Statements...<br><br>Sub-options:<br>5.1. Annual Reports<br>5.2. Policy Statements',
+        
+        '5.1': 'Annual Reports provide insights into the Department’s yearly performance and activities. Visit the Statements section for the latest reports.',
+
+        '5.2': 'Policy Statements include updates and information on the Department’s policies and regulations. Check the Policy Statements section for more details.',
+
+        '6': 'You selected Tariffs. Here is some information about Tariffs...<br><br>Sub-options:<br>6.1. Service Fees<br>6.2. Application Fees',
+        
+        '6.1': 'Service Fees details are available on the Tariffs page. Check for the most recent fee structures for various services provided by the Department.',
+
+        '6.2': 'Application Fees are outlined in the Tariffs section. Ensure you review the costs associated with different types of applications and services.',
+
+        '7': 'You selected Contacts. Here is some information about Contacts...<br><br>Sub-options:<br>7.1. General Inquiries<br>7.2. Office Locations<br>7.3. Customer Service',
+        
+        '7.1': 'For general inquiries, use the contact form or the details provided in the Contacts section to reach out for assistance.',
+
+        '7.2': 'Office Locations are listed in the Contacts section. Find the nearest Department office or service center for in-person visits.',
+
+        '7.3': 'Customer Service details can be found in the Contacts section for help with specific issues or service-related questions.',
+
+        '8': 'You selected Smart ID Card. Here is some information about Smart ID Card...<br><br>Sub-options:<br>8.1. Application Process<br>8.2. Renewal',
+        
+        '8.1': 'To apply for a Smart ID Card, visit the Smart ID Card section and follow the instructions for application, including required documents and procedures.',
+
+        '8.2': 'Renewal of Smart ID Cards can be done through the same section. Check for guidelines and the renewal process on the Smart ID Card page.',
+
+        '9': 'You selected Notices. Here is some information about Notices...<br><br>Sub-options:<br>9.1. Latest Notices<br>9.2. Archived Notices',
+        
+        '9.1': 'The Latest Notices section provides current updates and announcements from the Department. Check regularly for new information and notices.',
+
+        '9.2': 'Archived Notices include previous updates and announcements. Visit the Archived Notices section to view past notices and information.',
+
+        'default': 'Sorry, I did not understand that. Please choose a valid option.'
+    };
+
+    function sendMessage(text, sender) {
+    const messageDiv = document.createElement('div');
+    messageDiv.className = sender;
+    messageDiv.innerHTML = text;
+    messages.appendChild(messageDiv);
+    scrollToBottom(); // Scroll to the bottom when a new message is added
+}
+
+function scrollToBottom() {
+    const chatbox = document.getElementById('chatbox');
+    chatbox.scrollTop = chatbox.scrollHeight; // Scroll to the bottom
+}
+
+
+    // Send initial greeting message with HTML line breaks
+    sendMessage('Hey! Ndi kha vha Ras, How can I help you? <br>1. E-Services<br>2. About<br>3. Civic Services<br>4. Immigration<br>5. Statements<br>6. Tariffs<br>7. Contacts<br>8. Smart ID Card<br>9. Notices', 'bot');
+
+    function handleUserInput() {
+        const userText = userInput.value.trim();
+        if (userText) {
+            sendMessage(userText, 'user');
+            const response = responses[userText] || responses['default'];
+            sendMessage(response, 'bot');
+            userInput.value = '';
+        }
+    }
+
+    sendButton.addEventListener('click', handleUserInput);
+    userInput.addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+            handleUserInput();
+        }
+    });
+});
+
+  </script>
+
+
+</body>
+</html>
+<style>
+   #chatbot {
+    position: fixed;
+    top: 64%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 500px;
+    background: #f1f1f1;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+#chatbox {
+    height: 200px;
+    overflow-y: auto; /* Allow vertical scrolling */
+    margin-bottom: 10px;
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+
+#messages {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#messages div {
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+#messages .user {
+    text-align: right;
+    background: #e1ffc7;
+}
+
+#messages .bot {
+    text-align: left;
+    background: #e0e0e0;
+}
+
+#user-input {
+    width: calc(100% - 80px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#send-button {
+    width: 70px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+#send-button:hover {
+    background: #0056b3;
+}
+
+
+   ul {
+            list-style-type: none; /* Remove default bullets */
+            padding: 0;
+        }
+
+        ul li {
+            position: relative;
+            padding-left: 20px; /* Space for the custom bullet */
+        }
+
+        ul li::before {
+            content: '•'; /* Custom bullet character */
+            position: absolute;
+            left: 0;
+            color: green; /* Bullet color */
+            font-size: 20px; /* Bullet size */
+            line-height: 1; /* Adjust if needed */
+        }
+
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* First Navbar (Top) */
+.top-navbar {
+    background: #ffb81c;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-nav {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+}
+
+.top-nav li a {
+    color: #333;
+    text-decoration: none;
+}
+
+.social-icons {
+    display: flex;
+    align-items: center;
+}
+
+.social-icons a {
+    color: #333;
+    font-size: 18px;
+    margin-left: 15px;
+    text-decoration: none;
+}
+
+/* Main Header */
+.main-header {
+    background: #003366; /* South African Blue */
+    color: #fff;
+    padding: 20px 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo img {
+    max-height: 50px;
+}
+
+/* Main Navigation Styling */
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+    position: relative;
+    z-index: 100;
+    background-color: #003366; /* Deep blue background */
+}
+
+.main-nav ul li {
+    display: inline-block;
+    position: relative;
+    z-index: 101;
+}
+
+.main-nav ul li a {
+    color: #fff; /* White text */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font */
+    text-decoration: none;
+    font-size: 16px;
+    padding: 15px 20px;
+    display: block;
+    font-weight: 600; /* Semi-bold text */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effect */
+    border-radius: 4px; /* Rounded corners */
+}
+
+.main-nav ul li a:hover {
+    background-color: #ffb81c; /* South African gold on hover */
+    color: #003366; /* Blue text on hover */
+}
+
+/* Footer */
+.main-footer {
+    background: #003366;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.main-footer p {
+    margin: 0;
+}
+
+
+</style>
